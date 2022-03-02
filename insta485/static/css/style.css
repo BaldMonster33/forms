@@ -1,0 +1,233 @@
+@font-face {
+	font-family: billabong;
+	src: url("billabong.ttf") format('truetype');
+}
+
+.instalogo {
+	vertical-align: top;
+	font-family: 'billabong', serif;
+	font-size: 48px;
+	display: inline-block;
+}
+.longvertline {
+	vertical-align: top;
+	border-left: 1px solid black;
+	height: 50px;
+	display: inline-block;
+}
+.wordvertline {
+	vertical-align: top;
+	border-left: 1px solid black;
+	height: 20px;
+	display: inline-block;
+}
+.longhorline {
+	box-shadow: 1px 0px 1px #888;
+}
+
+.usertopright {
+	display: inline-block;
+	position: static;
+	float: right;
+	font-size: 20px;
+}
+
+
+.leftbox {
+	float:left;
+	width:5%;
+	height:60px;
+}
+.middlebox{
+	float:left;
+	width:5%;
+	height:60px;
+}
+#rightbox{
+	float:right;
+	width:10%;
+	height:60px;
+}
+a:link {
+	color: black;
+	background-color: transparent;
+	text-decoration: none;
+	font-weight:bold
+}
+
+a:visited {
+color: black;
+background-color: transparent;
+text-decoration: none;
+}
+
+a:hover {
+color: black;
+background-color: transparent;
+text-decoration: none;
+}
+
+a:active {
+color: black;
+background-color: transparent;
+text-decoration: none;
+}
+
+hr.verticalLine {
+	width: 1px;
+	height: 50px;
+	display: inline-block;
+	margin: 10px;
+	color: black;
+	background-color: black;
+	border: none;
+}
+
+title {
+	color: black;
+	display: inline-block;
+	font-size: 25px;
+	font-family: "Lucida Console", "Courier New", monospace;
+	background-color:transparent;
+}
+.align > * {
+	display: inline-block;
+	vertical-align: middle;
+	background-color:transparent;
+}
+
+.longvertline {
+	border-left: 1px solid black;
+	height: 48px;
+	display: inline-block;
+}
+.wordvertline {
+	border-left: 1px solid black;
+	height: 18px;
+	display: inline-block;
+}
+.longhorline {
+	border-bottom: 1px solid black;
+	height: 100px;
+	width: auto;
+	display: inline-block;
+	/*box-shadow: 1px 0px 1px #888;*/
+}
+
+.usertopright {
+	position: absolute;
+	top: 21px;
+	right: 30px;
+	font-size: 18px;
+}
+.exploretopright {
+	position: absolute;
+	top: 21px;
+	right: 20px;
+	font-size: 18px;
+}
+
+.relativePos {
+	position: relative;
+	/*width: fit-content;*/
+	max-width: available;
+}
+
+.breakLine{background-color:#fff;border-bottom:1px solid #dbdbdb;}
+.headerTag{height:100%;padding:20px}
+.profileImage{background-color:#fafafa;border-radius:50%;overflow:hidden;width: 32px; height: 32px;}
+.profileName{font-weight:600;padding:5px 9px;text-align:center;top: -10px; font-size: 15px;width: 32px; height: 32px; display: inline-block}
+.postCreateTime{font-weight:200;top: -10px; text-align: right; right: 0px;position: absolute;padding:17px 8px; color: grey}
+
+.color {
+	--color: 255,255,255;
+	--alpha: 1;
+}
+#leftbox {
+	float:left;
+	width:5%;
+	height:60px;
+}
+#middlebox{
+	float:left;
+	width:5%;
+	height:60px;
+}
+#rightbox{
+	float:left;
+	width:10%;
+	height:60px;
+}
+a:link {
+	color: black;
+	background-color: transparent;
+	text-decoration: none;
+	font-weight:bold
+}
+
+a:visited {
+color: black;
+background-color: transparent;
+text-decoration: none;
+}
+
+a:hover {
+color: black;
+background-color: transparent;
+text-decoration: none;
+}
+
+a:active {
+color: black;
+background-color: transparent;
+text-decoration: underline;
+}
+
+.articleDef {
+	margin-bottom: 35px;
+	margin-top: 30px;
+	padding-right: 20px;
+	padding-left: 20px;
+	border: solid 1px grey;
+	border-radius: 5px;
+	background: white;
+	min-height: 50px;
+	max-width: available;
+}
+.imageDef {
+	max-width: available;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.reviews {
+	padding-left: 20px;
+}
+
+body.globMargin {
+	margin-left: 100px;
+	margin-right: 100px;
+}
+
+.username {
+	value : "username"
+}
+
+input {
+	alignment: center;
+	align-content: center;
+	border-radius: 1px;
+	border-width: 1px;
+	font-size: 0.5em;
+    border-color: darkgrey;
+    vertical-align: center;
+}
+
+.vertical-center {
+  margin: 0;
+  /* position: absolute; */
+  top: 50%;
+  -ms-transform: translateY(50%);
+  transform: translateY(50%);
+}

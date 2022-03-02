@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+{#Le#}
+<head>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>Questionnaire</title>
+</head>
+
+<body class="globMargin">
+
+<div style="white-space: nowrap" id="topNavigator">
+    <div style="display:inline; text-align:left">
+{#        <img src="/static/images/ins.jpg" style="width:70px;height:auto;" alt="ins_logo">#}
+{#        <hr class="verticalLine">#}
+        <a href="/">
+            <span class="instalogo" style="margin: 10px"> Questionnaire&emsp; Made by ICA-SeFa Team</span>
+        </a>
+    </div>
+
+</div>
+
+
+<hr style="height:2px;border-width:0; background-color:#fff;border-bottom:1px solid #dbdbdb;border-bottom:1px solid rgba(219,219,219,1)">
+
+<article class="articleDef">
+    <header class="headerTag">
+        <div class="relativePos">
+            <span style="text-align:center;"> Hi, Please tell me your name to get started, or you are free to leave it as blank to be anonymous .</span><br>
+            <span style="text-align:center;"> 您好，请输入您的名字以开始，或留空以选择匿名回答。 感谢您的时间</span>
+            <form action="/accounts/" method="post" enctype="multipart/form-data">
+                <input type="text" name="name" placeholder="Name" required/>
+                <input type="submit" value="开始"/>
+                <input type="hidden" name="operation" value="create"/>
+            </form>
+            <br>
+        </div>
+    </header>
+</article>

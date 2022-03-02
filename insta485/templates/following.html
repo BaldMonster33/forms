@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>insta485</title>
+</head>
+
+<body class="globMargin">
+
+<div style="white-space: nowrap" id="topNavigator">
+    <div style="display:inline; text-align:left">
+        <img src="/static/images/ins.jpg" style="width:70px;height:auto;" alt="ins_logo">
+        <hr class="verticalLine">
+        <a href="/">
+            <span class="instalogo" style="margin: 10px"> Insta485</span>
+        </a>
+    </div>
+
+    <div style="display:inline; float: right; position:relative; top: 30px">
+        <a href = "/explore/">explore</a>
+        <span class="wordvertline"></span>
+        <a href = "{{ '/users/%s/'%logname}}" > {{logname}}</a>
+    </div>
+</div>
+
+<hr style="height:2px;border-width:0; background-color:#ffffff;border-bottom:1px solid #dbdbdb;border-bottom:1px solid rgb(219,219,219)">
+
+<p style="font-size: 25px; font-weight: 800">Following</p>
+{% for user in following %}
+<article class="articleDef">
+    <header class="headerTag">
+        <div class ="relativePos">
+            <a class="profileImage" href="{{ '/users/%s/'%user.username}}" tabindex="0" style="width: 32px; height: 32px; display: inline-block;">
+                <img alt="{{ '%s \'s profile picture'%user.username}}"
+                     crossorigin="anonymous" data-testid="user-avatar" draggable="false"
+                     src="{{'/uploads/%s'%user.user_img_url[0].filename}}" style="width: 32px; height: 32px">
+            </a>
+            <a class="profileName" href="{{ '/users/%s/'%user.username}}">
+                {{user.username}}
+            </a>
+            <div class="postCreateTime">
+                {% if logname != user.username %}
+                {%if user.logname_follows_username %}
+                    <span style="font-size: 18px">following</span>
+                    <!-- DO NOT CHANGE THIS (aside from where we say 'FIXME') -->
+                    <form action="{{'/following/?target=/users/%s/following/'%user_url_slug}}" method="post" enctype="multipart/form-data">
+                        <input type="submit" name="unfollow" value="unfollow"/>
+                        <input type="hidden" name="username" value="{{user.username}}"/>
+                        <input type="hidden" name="operation" value="unfollow"/>
+                    </form>
+                {%else %}
+                    <span style="font-size: 18px">not following</span>
+                    <!-- DO NOT CHANGE THIS (aside from where we say 'FIXME') -->
+                    <form action="{{'/following/?target=/users/%s/following/'%user_url_slug}}" method="post" enctype="multipart/form-data">
+                        <input type="submit" name="follow" value="follow"/>
+                        <input type="hidden" name="username" value="{{user.username}}"/>
+                        <input type="hidden" name="operation" value="follow"/>
+                    </form>
+                {% endif %}
+            {% endif %}
+            </div>
+
+
+        </div>
+    </header>
+
+
+</article>
+{% endfor %}
+
+
+</body>
+</html>

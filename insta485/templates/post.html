@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>insta485</title>
+</head>
+
+<body class="globMargin">
+
+<div style="white-space: nowrap" id="topNavigator">
+    <div style="display:inline; text-align:left">
+        <img src="/static/images/ins.jpg" style="width:70px;height:auto;" alt="ins_logo">
+        <hr class="verticalLine">
+        <a href="/">
+            <span class="instalogo" style="margin: 10px"> Insta485</span>
+        </a>
+    </div>
+
+    <div style="display:inline; float: right; position:relative; top: 30px">
+        <a href = "/explore/">explore</a>
+        <span class="wordvertline"></span>
+        <a href = "{{ '/users/%s/'%username}}" > {{username}}</a>
+    </div>
+</div>
+
+<hr style="height:2px;border-width:0; background-color:#fff;border-bottom:1px solid #dbdbdb;border-bottom:1px solid rgba(219,219,219,1)">
+
+<article class="articleDef">
+    <header class="headerTag">
+        <div class ="relativePos">
+            <a class="profileImage" href="{{ '/users/%s/'%owner}}" tabindex="0" style="width: 32px; height: 32px; display: inline-block;">
+                <img alt="/uploads/{{owner_img_url}}"
+                     crossorigin="anonymous" data-testid="user-avatar" draggable="false"
+                     src="/uploads/{{owner_img_url}}" style="width: 32px; height: 32px">
+            </a>
+            <a class="profileName" href="{{ '/users/%s/'%owner}}">
+                {{owner}}
+            </a>
+            <a href="{{ '/posts/%s/'%postid}}">
+                <span class="postCreateTime" >{{created}}</span>
+            </a>
+        </div>
+    </header>
+
+    <div class="imageDef">
+        <img alt = "picture of {{owner}}" src="/uploads/{{filename}}" style="padding-bottom: 10px">
+    </div>
+
+    <div class="reviews" style="padding-bottom: 10px">
+        {% if likes == 1 %}
+            <p style="font-weight: 500"> {{likes}} like </p>
+        {% else %}
+            <p style="font-weight: 500"> {{likes}} likes </p>
+        {% endif %}
+
+        {% for owner_dict in comments %}
+            <p>
+                <a href="{{ '/users/%s/'%owner_dict.owner}}">{{owner_dict.owner}}</a>
+                <span>{{owner_dict.text}}</span>
+            </p>
+            {% if owner_dict.owner == username %}
+                <!-- DO NOT CHANGE THIS (aside from where we say 'FIXME') -->
+                <form action="{{"/comments/?target=/posts/%s"|format(postid)}}" method="post" enctype="multipart/form-data">
+                    <input type="hidden" name="operation" value="delete"/>
+                    <input type="hidden" name="commentid" value="{{owner_dict.commentid}}"/>
+                    <input type="submit" name="uncomment" value="delete"/>
+                </form>
+            {% endif %}
+        {% endfor %}
+
+        {% if logname_likes_post %}
+            <!-- DO NOT CHANGE THIS (aside from where we say 'FIXME') -->
+            <form action="{{"/likes/?target=/posts/%s"%postid}}" method="post" enctype="multipart/form-data">
+              <input type="hidden" name="operation" value="unlike"/>
+              <input type="hidden" name="postid" value="{{postid}}"/>
+              <input type="submit" name="unlike" value="unlike"/>
+            </form>
+        {% else %}
+            <!-- DO NOT CHANGE THIS (aside from where we say 'FIXME') -->
+            <form action="{{"/likes/?target=/posts/%s"%postid}}" method="post" enctype="multipart/form-data">
+              <input type="hidden" name="operation" value="like"/>
+              <input type="hidden" name="postid" value="{{postid}}"/>
+              <input type="submit" name="like" value="like"/>
+            </form>
+        {% endif %}
+        <!-- DO NOT CHANGE THIS (aside from where we say 'FIXME') -->
+        <form action="/comments/?target=/posts/{{postid}}" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="operation" value="create"/>
+            <input type="hidden" name="postid" value="{{postid}}"/>
+            <input type="text" name="text" required/>
+            <input type="submit" name="comment" value="comment"/>
+        </form>
+
+        {% if username == owner %}
+        <!-- DO NOT CHANGE THIS (aside from where we say 'FIXME') -->
+        <form action="/posts/?target=/users/{{username}}/" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="operation" value="delete"/>
+            <input type="hidden" name="postid" value="{{ postid }}"/>
+            <input type="submit" name="delete" value="delete this post"/>
+        </form>
+        {% endif %}
+    </div>
+</article>
+
+</body>
+</html>

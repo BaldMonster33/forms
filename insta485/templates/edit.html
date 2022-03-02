@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+{#Le#}
+<head>
+    <link rel="stylesheet" href="/static/css/create.css">
+    <title>insta485</title>
+</head>
+
+<body class="globMargin">
+
+<div style="white-space: nowrap" id="topNavigator">
+    <div style="display:inline; text-align:left">
+        <img src="/static/images/ins.jpg" style="width:70px;height:auto;" alt="ins_logo">
+        <hr class="verticalLine">
+        <a href="/">
+            <span class="instalogo" style="margin: 10px"> Insta485</span>
+        </a>
+    </div>
+
+    <div style="display:inline; float: right; position:relative; top: 30px">
+        <a href="/explore/">explore</a>
+        <span class="wordvertline"></span>
+        <a href="{{ '/users/%s/'%username }}">{{ username }}</a>
+    </div>
+</div>
+
+<hr style="height:2px;border-width:0; background-color:#fff;border-bottom:1px solid #dbdbdb;border-bottom:1px solid rgba(219,219,219,1)">
+
+<article class="articleDef">
+    <header class="headerTag">
+        <div class="relativePos">
+            <div class="profileImage" tabindex="0"
+               style="width: 32px; height: 32px; display: inline-block;">
+                <img alt="{{ '%s \'s profile picture'%username }}"
+                     crossorigin="anonymous" data-testid="user-avatar" draggable="false"
+                     src="/uploads/{{ filename }}" style="width: 32px; height: 32px">
+            </div>
+            <span class="profileName">
+                {{ username }}
+            </span>
+
+            <form action="{{ '/accounts/?target=%s'%url_for('edit') }}" method="post" enctype="multipart/form-data">
+                <span>Photo</span>
+                <input type="file" name="file" accept="image/*"/>
+                <br>
+                <span>Name</span>
+                <input type="text" name="fullname" value="{{ fullname }}" required/><br>
+                <span>Email</span>
+                <input type="text" name="email" value="{{ email }}" required/><br>
+                <input type="submit" name="update" value="submit"/>
+                <input type="hidden" name="operation" value="edit_account"/>
+            </form>
+        </div>
+        <div style="margin-top:20px">
+            <a class = "profileName" href = "/accounts/password/">Change Password</a><br>
+            <a class = "profileName" href = "/accounts/delete/">Delete Account</a>
+        </div>
+    </header>
+
+
+</article>
+
+
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+{#Le#}
+<head>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>Questionnaire</title>
+</head>
+
+<body class="globMargin">
+
+<div style="white-space: nowrap" id="topNavigator">
+    <div style="display:inline; text-align:left">
+{#        <img src="/static/images/ins.jpg" style="width:70px;height:auto;" alt="ins_logo">#}
+{#        <hr class="verticalLine">#}
+        <a href="/">
+            <span class="instalogo" style="margin: 10px"> Questionnaire&emsp; Made by ICA-SeFa Team</span>
+        </a>
+    </div>
+
+</div>
+
+<hr style="height:2px;border-width:0; background-color:#fff;border-bottom:1px solid #dbdbdb;border-bottom:1px solid rgba(219,219,219,1)">
+<div>
+    <span style="padding-left: 20px">Hello,
+{#        Thanks so much for your time and effort doing this questionnaire! <br>#}
+        本问卷中，我们将会请您给120组图片进行标注，希望您能认真完成。非常感谢！这对我们非常重要！<br>
+        每组图片将会是25张（5行5列）图片。您需要根据这25张图片，回答以下两个问题。请您在下文的选项中选择。<br>
+        您认为下面的五行图片，从左到右的变化是<u style="font-size: 16px">一致</u>的吗？&emsp;是 / 否<br>
+        您认为这种变化，大致上来讲，是否是某种<u style="font-size: 16px">单一</u>的、容易理解、易于描述的变化？&emsp;是 / 否<br>
+    </span>
+</div>
+
+
+<div id="reactEntry">
+    Loading ...
+</div>
+<!-- Load JavaScript -->
+<script type="text/javascript" src="{{ url_for('static', filename='js/bundle.js') }}"></script>
+
+</body>
+</html>

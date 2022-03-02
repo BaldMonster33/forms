@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+{#Le#}
+<head>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>insta485</title>
+</head>
+
+<body class="globMargin">
+
+<div style="white-space: nowrap" id="topNavigator">
+    <div style="display:inline; text-align:left">
+        <img src="/static/images/ins.jpg" style="width:70px;height:auto;" alt="ins_logo">
+        <hr class="verticalLine">
+        <a href="/">
+            <span class="instalogo" style="margin: 10px"> Insta485</span>
+        </a>
+    </div>
+
+    <div style="display:inline; float: right; position:relative; top: 30px">
+        <a href = "/explore/">explore</a>
+        <span class="wordvertline"></span>
+        <a href = "{{ '/users/%s/'%username}}" >{{username}}</a>
+    </div>
+</div>
+
+<hr style="height:2px;border-width:0; background-color:#fff;border-bottom:1px solid #dbdbdb;border-bottom:1px solid rgba(219,219,219,1)">
+
+<article class="articleDef">
+    <header class="headerTag">
+        <div class="relativePos">
+            <span class="instalogo" style="text-align:center; margin:10px"> Wish you had a good time here</span>
+            <!-- DO NOT CHANGE THIS -->
+            <form action="{{ '/accounts/?target=%s'%url_for('create') }}" method="post"
+                  enctype="multipart/form-data">
+                <input type="submit" name="delete" value="confirm delete account"/>
+                <input type="hidden" name="operation" value="delete"/>
+            </form>
+
+
+        </div>
+    </header>
+</article>
+
+
+</body>
+</html>

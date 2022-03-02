@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+{#Le#}
+<head>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>insta485</title>
+</head>
+
+<body class="globMargin">
+
+<div style="white-space: nowrap" id="topNavigator">
+    <div style="display:inline; text-align:left">
+        <img src="/static/images/ins.jpg" style="width:70px;height:auto;" alt="ins_logo">
+        <hr class="verticalLine">
+        <a href="/">
+            <span class="instalogo" style="margin: 10px"> Insta485</span>
+        </a>
+    </div>
+
+    <div style="display:inline; float: right; position:relative; top: 30px">
+        <a href = "/">login</a>
+{#        <span class="wordvertline"></span>#}
+{#        <a href = "{{ '/users/%s/'%user}}" >{{user}}</a>#}
+    </div>
+</div>
+
+<hr style="height:2px;border-width:0; background-color:#fff;border-bottom:1px solid #dbdbdb;border-bottom:1px solid rgba(219,219,219,1)">
+
+<article class="articleDef">
+    <header class="headerTag">
+        <div class ="relativePos">
+            <span class="instalogo" style="text-align:center; margin:10px"> Happy chinese new year!</span>
+{#WHEN CAN I FIND A GIRLFREIND#}
+            <form action="/accounts/" method="post" enctype="multipart/form-data">
+          <input type="text" name="username" placeholder="username" required/>
+          <input type="password" name="password" placeholder="password" required/>
+          <input type="submit" value="login"/>
+          <input type="hidden" name="operation" value="login"/>
+        </form><br>
+
+            <span style="text-align:center;">Dont't have an account? </span>
+            <a href="/accounts/create/">Signup</a>
+
+        </div>
+    </header>
+</article>
+
+
+</body>
+</html>
