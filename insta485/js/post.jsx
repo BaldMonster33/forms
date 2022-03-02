@@ -261,7 +261,7 @@ class Post extends React.Component {
         return (
             <div className="post">
                 <InfiniteScroll
-                    dataLength={10}
+                    dataLength={this.state.questions.length}
                     next={this.fetchData}
                     hasMore={false}
                     loader={<h4>更多题目加载中</h4>}

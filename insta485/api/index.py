@@ -18,6 +18,7 @@ def get_index():
 def records():
     """Handle answers and get """
     jsons = flask.request.json
+    print(jsons)
     if jsons:
         qn, qi, choice = jsons.get('qn'), jsons.get('qi'), jsons.get('choice')
         user = flask.session["name"]
